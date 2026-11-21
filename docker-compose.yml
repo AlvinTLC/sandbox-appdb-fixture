@@ -15,6 +15,6 @@ services:
         condition: service_healthy
     environment:
       DATABASE_URL: postgres://postgres:fixture@db:5432/appdb
-    command: sh -c "npm i pg@8 --silent && node server.js"
+    command: sh -c "HOME=/tmp npm i pg@8 --silent && HOME=/tmp node server.js"
     ports:
       - "8080:3000"
